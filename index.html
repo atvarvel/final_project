@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pixie Tour project 2</title>
+
+  <!-- Google Font -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet"> -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+  <!-- Icons -->
+  <!-- 
+  <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="static/css/leaflet.extra-markers.min.css">
+  -->
+
+  <!-- Plotly JS -->
+  <script src="https://cdn.plot.ly/plotly-2.2.0.min.js"></script>
+
+   <!-- Leaflet CSS -->
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+ integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+ crossorigin=""/>
+ <!-- Marker Cluster CSS -->
+ <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+ <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="band_tours/static/css/style.css">
+</head>
+
+<body>
+
+
+  <div class="wrapper">
+
+      <div class="jumbotron jumbotron-fluid" id="title" style="height: 300px;background-color: aquamarine;">
+        <div class="justify-content-center">
+          <h1 class="display-4">Airline Review</h1>
+          <p class="lead"><h2> These reviews taken from 6 different airlines have been classified into 3 groups, positive, negative, and neutral.</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class='container'>
+      <div class = 'row'>
+        <div class='col-md-4'>
+          <h2>Review Type Selection</h2>
+          Select the review type: <select id="sel-type" onchange='processFilters()'>
+            <option value="Positive">Positive</option>
+            <option value="Neutral">Neutral</option>
+            <option value="Negative">Negative</option>
+          </select>
+          <br>
+          <br>
+
+
+         
+        </div>
+      
+
+     
+        
+          <div class='col-md-4'>
+            <h2>Airline Selection</h2>
+          Select Airline: 
+          <select id="sel-airline" onchange='processFilters()'>
+            <option value="American Airline">American Airline</option>
+            <option value="Delta Airline">Delta Airline</option>
+            <option value="US Airways">US Airways</option>
+            <option value="Southwest Airline">Southwest Airline</option>
+            <option value="United Airline">United Airline</option>
+            <option value="Virgin Airline">Virgin Airline</option>
+          </select>
+        </div>
+    </div>
+          <br>
+          <br>
+          <div class = 'row'>
+            <div class="col-md-12">
+        <img class="col-md-12" id='airline_picture' src='https://nodeassets.nbcnews.com/cdnassets/projects/2017/08/airplane-mode/social-airplane-mode-takeoff.jpg' style="height: 500px  'width:400px'; background-color: rgba(255, 255, 255, 0.904);">
+         <br>
+         <br> 
+        </div>
+      
+      
+     
+ 
+      
+      
+  </div>
+ 
+  <!-- D3 and D3 Request Link-->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <!-- <script src = "https://d3js.org/d3-request.v1.min.js"></script> -->
+
+
+  <!-- MomentJS -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>
+   <!-- Marker Cluster JS -->
+  <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+
+  <!-- Icons -->
+  <script src="static/js/leaflet.extra-markers.min.js"></script>
+
+  <!-- polyfill.io is library for using newer JavaScript features in older browers (such as Object.assign) -->
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+
+  <!-- API Key -->
+  <script type="text/javascript" src="/static/js/config.js"></script>
+
+  <!-- Our JavaScript -->
+  <script type="text/javascript" src="static/js/logic.js"></script>
+
+</body>
+
+</html>

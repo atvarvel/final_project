@@ -5,7 +5,7 @@ import joblib
 
 app = Flask(__name__)
 
-file = 'Final_Project/final_model.sav'
+file = 'sentiment/final_model.sav'
 
 model = joblib.load(file)
 

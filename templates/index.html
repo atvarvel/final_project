@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sentiment Analysis</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <div class="jumbotron jumbotron-fluid" id="title" style="height: 300px; background-color: rgba(247, 139, 125, 0.753);">
+      <div class="justify-content-center">
+        <h1 class="display-4"> Airline Reviews</h1>
+        <p class="lead"><h2> This site can classify reviews of airlines into 3 groups: positive, negative, and neutral.</h2>
+      </div>
+    </div>
+
+    <div class = 'row'>
+      <img class="col-md-6" id='airline_picture' src='https://nodeassets.nbcnews.com/cdnassets/projects/2017/08/airplane-mode/social-airplane-mode-takeoff.jpg' style="height: 500px  'width:400px'; background-color: rgba(255, 255, 255, 0.904);">
+      <br>
+      <div class="col-md-6">
+        <h3>Find a tweet responding to one of the following airlines: American, Delta, Southwest, United, US Airways, Virgin America, JetBlue</h3>
+        <br>
+        <h4>If you'd like, you can use this link to a search of tweets directed toward these airlines.</h4>
+        <a href="https://twitter.com/search?lang=en&q=(to%3Aunited%20OR%20to%3AJetBlue%20OR%20to%3ASouthwestAir%20OR%20to%3AAmericanAir)&src=typed_query" target="_blank" rel="noreferrer noopener">Twitter Search</a>
+      </div>
+    </div>
+
+    <div class='container'>
+      <div class = 'row'>
+        <font face="Times New Roman" size="10px" color="#150564">Type your review here to get classified</font>
+        <div class='col-md-12'>
+          <form action="http://localhost:5000" method="post" id="form1">
+            <input type="text" id="myTextBox" name="myTextBox" cols="50" rows="5" style="height: 200px; width: 800px;background-color:rgba(247, 139, 125, 0.753);color:#150564;border:5px double #7d33f5;">
+            </input>
+            <br/>
+            <button type="submit" form="form1" value="Submit" style="background-color:rgb(32, 6, 148);color:white;padding:5px;font-size:18px;border:none;padding:8px;">Submit</button>
+          </form>
+        </div>
+      </div> 
+        <br>
+        <br>
+        <h2> Classification</h2>
+        <div class="col-md-6" style='height: 500px; background-color: rgba(31, 182, 241, 0.733);'>
+          <div class="box">
+            <h4>{{ output }}</h4>
+          </div>
+        </div>
+         
+        <br>
+        <br> 
+    </div>
+      
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <!-- MomentJS -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+
+  <!-- Marker Cluster JS
+  <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+
+  polyfill.io is library for using newer JavaScript features in older browers (such as Object.assign)
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script> -->
+
+</body>
+
+</html>

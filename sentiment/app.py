@@ -5,7 +5,9 @@ import joblib
 
 app = Flask(__name__)
 
-model = joblib.load('final_model.sav')
+file = 'Final_Project/final_model.sav'
+
+model = joblib.load(file)
 
 @app.route('/')
 def home():
@@ -17,13 +19,13 @@ def getPrediction():
     if request.method == 'POST':
 
         tweet = request.form['myTextBox']
-        tweet = [tweet]
-        result = model.predict(tweet)
+        tweet_array = [tweet]
+        result = model.predict(tweet_array)
 
-        return redirect(url_for('prediction', output_result=result))
+        return redirect(url_for('prediction', output_result=result, text=tweet))
 
-@app.route('/predict/<output_result>')
-def prediction(output_result):
+@app.route('/predict/<output_result>/<text>')
+def prediction(output_result, text):
 
     if output_result == [0]:
         type = 'negative'
@@ -34,7 +36,7 @@ def prediction(output_result):
     else:
         type = 'positive'
 
-    return render_template('index.html', output=type)
+    return render_template('index.html', output=type, tweet=text)
 
 if __name__ == '__main__':
     app.run(debug=True)

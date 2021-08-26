@@ -36,11 +36,14 @@ def prediction(output_result, text):
     # else:
     #     type = 'This tweet has a negative vibe'
 
-    if np.array_equal(output_result, [2]):
+    positive = [2]
+    neutral = [1]
+
+    if np.array_equal(output_result, positive):
 
         type = 'This tweet has a positive vibe'
 
-    elif np.array_equal(output_result, [1]):
+    elif np.array_equal(output_result, neutral):
 
         type = 'This tweet has a neutral vibe'
 

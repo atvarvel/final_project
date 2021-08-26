@@ -36,7 +36,19 @@ def prediction(output_result, text):
     # else:
     #     type = 'This tweet has a negative vibe'
 
-    return render_template('index.html', output=output_result, tweet=text)
+    if np.array_equal(output_result, [2]):
+
+        type = 'This tweet has a positive vibe'
+
+    elif np.array_equal(output_result, [1]):
+
+        type = 'This tweet has a neutral vibe'
+
+    else:
+
+        type = 'This tweet has a negative vibe'
+
+    return render_template('index.html', output=type, tweet=text)
 
 if __name__ == '__main__':
     app.run(debug=True)

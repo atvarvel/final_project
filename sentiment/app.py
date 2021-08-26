@@ -27,16 +27,16 @@ def getPrediction():
 @app.route('/predict/<output_result>/<text>', methods=['POST', 'GET'])
 def prediction(output_result, text):
 
-    if output_result == [2]:
-        type = 'This tweet has a positive vibe'
+    # if output_result == [2]:
+    #     type = 'This tweet has a positive vibe'
 
-    elif output_result == [1]:
-        type = 'This tweet has a neutral vibe'
+    # elif output_result == [1]:
+    #     type = 'This tweet has a neutral vibe'
         
-    else:
-        type = 'This tweet has a negative vibe'
+    # else:
+    #     type = 'This tweet has a negative vibe'
 
-    return render_template('index.html', output=type, tweet=text)
+    return render_template('index.html', output=output_result, tweet=text)
 
 if __name__ == '__main__':
     app.run(debug=True)

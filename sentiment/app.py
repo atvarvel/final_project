@@ -28,13 +28,13 @@ def getPrediction():
 def prediction(output_result, text):
 
     if output_result == [0]:
-        type = 'negative'
+        type = 'This tweet has a negative vibe'
 
     elif output_result == [1]:
-        type = 'neutral'
+        type = 'This tweet has a neutral vibe'
         
     else:
-        type = 'positive'
+        type = 'This tweet has a positive vibe'
 
     return render_template('index.html', output=type, tweet=text)
 

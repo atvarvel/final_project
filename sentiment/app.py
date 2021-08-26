@@ -24,7 +24,7 @@ def getPrediction():
 
         return redirect(url_for('prediction', output_result=result, text=tweet))
 
-@app.route('/predict/<output_result>/<text>')
+@app.route('/predict/<output_result>/<text>', methods=['POST', 'GET'])
 def prediction(output_result, text):
 
     if output_result == [0]:
